@@ -1,0 +1,15 @@
+html {
+    font-size: 10px;
+    background-size: cover;
+  }
+  
+  body,html {
+    margin: 0 auto;
+    padding: 0;
+    font-family: sans-serif;
+  }
+  h1{
+      text-align: center;
+      font-size: 3em;
+      color: #ffc600;
+  }
