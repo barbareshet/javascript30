@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <title>Javascript 30 Challenge</title>
+         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link rel="stylesheet" href="../style.css">
+        <link rel="stylesheet" href="style.css">
+        <script type="text/javascript" src="https://www.cornify.com/js/cornify.js"></script>
+</head>
+<body>
+<header>
+        <h1>Javascript 30 Challenge 12 - Key Sequence Detection </h1>
+        <button onclick="goBack()">Go Back</button>
+</header>
+<main>
+
+</main>
+
+<script>
+        const pressed = [];
+        const secretWord = 'barbareshet';
+        window.addEventListener('keyup', (e) => {
+                console.log( e.key );
+                pressed.push( e.key );
+                //limiting the array length to secretWord length (11)
+                pressed.splice( -secretWord.length -1, pressed.length - secretWord.length );
+
+                if (pressed.join('').includes(secretWord)){
+                        console.log('Cool Secret Word');
+                        cornify_add();
+                }
+                console.log( pressed );
+        });
+
+</script>
+</body>
+</html>
