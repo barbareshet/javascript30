@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <title>Javascript 30 Challenge</title>
+         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link rel="stylesheet" href="../style.css">
+        <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+        <h1>Javascript 30 Challenge 16 - Mouse Move Shadow </h1>
+        <button onclick="goBack()">Go Back</button>
+</header>
+<main>
+        <div class="hero">
+                <h2 contenteditable>🔥WOAH!</h2>
+        </div>
+</main>
+
+<script>
+        const hero = document.querySelector('.hero');
+        const heroText = hero.querySelector('h2');
+        const walk = 100; //100px will be the most far away strech from he text
+        function shadow(e){
+                // const width = hero.offsetWidth;
+                // const height = hero.offsetHeight;
+
+                // one line object way
+                const { offsetWidth: width, offsetHeight:height } = hero;
+
+                let { offsetX: x, offsetY: y } = e; 
+                
+                //this = hero
+                //e.target = the element we are hovering on (hero || h2 tag)
+
+                if ( this !== e.target){
+                        x = x + e.target.offsetLeft;
+                        y = y + e.target.offsetTop;
+                }
+
+                const xWalk = Math.round( x / width * walk ) - ( walk / 2 );
+                const yWalk = Math.round( y / height * walk ) - ( walk / 2 );
+
+                heroText.style.textShadow = `${xWalk}px ${yWalk}px 0 red`;
+                console.log(xWalk,yWalk);
+        }
+
+        hero.addEventListener('mousemove', shadow);
+</script>
+</body>
+</html>
