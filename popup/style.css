@@ -1,0 +1,87 @@
+.widget-sidebar-popup{
+    position: fixed;
+    background: #c3ea1b;
+    bottom: -335px;
+    left: 0;
+    z-index: 1030;
+    padding: 5px 25px;
+    -webkit-transition: all 0.4s ease-in-out;
+    -moz-transition: all 0.4s ease-in-out;
+    -ms-transition: all 0.4s ease-in-out;
+    -o-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+    min-height: 400px;
+    width:400px;
+
+}
+.widget-sidebar-popup h3{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row-reverse;
+}
+.widget-sidebar-popup h3:hover{
+    cursor: pointer;
+}
+.widget-sidebar-popup .fa{
+    color: #fff;
+    margin-left: 15px;
+}
+.widget-sidebar-popup .close-popup{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    color: #000;
+    display: none;
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -ms-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
+
+.widget-sidebar-popup.popup-open{
+    -webkit-transform: translateY(-65%);
+    -moz-transform: translateY(-65%);
+    -ms-transform: translateY(-65%);
+    -o-transform: translateY(-65%);
+    transform: translateY(-65%);
+    transition-property: transform;
+}
+.widget-sidebar-popup.popup-open .close-popup{
+    display: block;
+    transition-property: display;
+}
+.widget-sidebar-popup.popup-open .close-popup:hover{
+    cursor: pointer;
+}
+.widget-sidebar-popup.popup-open h3:hover{
+    cursor: default;
+}
+
+/**
+popup form wpcf7
+**/
+.widget-sidebar-popup .wpcf7 .form-group{
+    width: 304px;
+    margin: 10px auto;
+}
+.widget-sidebar-popup .wpcf7 .form-control{
+    background-color: transparent;
+    color: #000;
+    border-color: #fff;
+}
+.widget-sidebar-popup .wpcf7 .form-group #popup-submit{
+    background-color: #ffffff;
+    color: #000000;
+    font-size: 17px;
+    font-weight: 400;
+    width:100%;
+}
+
+#wpcf7-f3668-o1 > form > div.wpcf7-response-output.wpcf7-display-none.wpcf7-mail-sent-ok{
+    width: 305px;
+    margin: 0 auto;
+    color: #000;
+    
+}

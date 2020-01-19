@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <title>Javascript 30 Challenge popup</title>
+         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link rel="stylesheet" href="../style.css">
+        <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+        <h1>Javascript 30 Challenge PopUP </h1>
+        <button onclick="goBack()">Go Back</button>
+</header>
+<main>
+        <div class="widget-sidebar-popup">
+                <div class="close-popup">X</div>
+                <h3>Submit form to gain fame</h3>
+                <form>
+                        <div class="form-group">
+                          <label for="exampleInputEmail1">Email address</label>
+                          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        </div>
+                        <div class="form-group">
+                          <label for="exampleInputTel">Password</label>
+                          <input type="tel" class="form-control" id="exampleInputTel">
+                        </div>
+                        
+                        <input type="submit" class="btn btn-primary popup-submit" value="Submit">
+                      </form>
+        </div>
+</main>
+
+<script>
+        const   popupWidget     = document.querySelector('.widget-sidebar-popup');
+        const   popupTitle      = document.querySelector('.widget-sidebar-popup h3');
+        let     titleText       = popupTitle.innerHTML;
+        const   closePopup      = document.querySelector('.close-popup');
+        const   submitBtn       = document.querySelector('.popup-submit');
+        console.log(titleText);
+        function popup_open(){
+                popupWidget.classList.add('popup-open');
+        }
+        function popup_close(){
+                popupWidget.classList.remove('popup-open');
+        }
+        function popup_change_title_after_send(e){
+                e.preventDefault();
+                
+                popupWidget.style.height="400px";
+                setTimeout( () => {
+                        
+                        popup_close();
+                        
+                },3000)
+        }
+        popupTitle.addEventListener('click', popup_open);
+        closePopup.addEventListener('click', popup_close);
+        submitBtn.addEventListener('click', popup_change_title_after_send)
+        
+</script>
+</body>
+</html>
