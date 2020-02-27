@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <title>Javascript 30 Challenge - Understanding JavaScript's Capture</title>
+         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link rel="stylesheet" href="../style.css">
+        <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+        <h1>Javascript 30 Challenge  25 - Event Capture, Propagation, Bubbling and Once</h1>
+        <button onclick="goBack()">Go Back</button>
+</header>
+<main class="bod">
+        <div class="one">
+                <div class="two">
+                        <div class="three">
+                        </div>
+                </div>
+        </div>
+</main>
+<button class="btn"> Click Me!!!</button>
+<script>
+        const divs = document.querySelectorAll('div');
+        const btn = document.querySelector('.btn');
+
+        // e.stopPropagation();
+        
+        function logText( e ){
+                console.log(this.classList.value);
+        }
+
+        divs.forEach(div => div.addEventListener('click', logText,{
+                capture:false,
+                once:true
+        }));
+
+        btn.addEventListener( 'click', () => {
+                console.log('click');
+        },{
+                once:true
+        });
+</script>
+</body>
+</html>
