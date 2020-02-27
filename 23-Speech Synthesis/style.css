@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,500&display=swap');
+
+body{
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 15px;
+    font-family: 'Raleway', sans-serif;
+}
+
+header{
+    background: purple;
+    padding 15px 5px;
+}
+header h1{
+    color: #fff;
+    padding: 25px 15px;
+}
